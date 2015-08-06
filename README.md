@@ -151,7 +151,7 @@ bridge.off(id)
 ```
 Unsubscribe, receiving message !
 
-### Example 1 = UI Layer need some process on BL Layer
+### Example 1 = UI Layer need some data processing on BL Layer
 
 
 ```js
@@ -169,7 +169,7 @@ var id = bridge.on("/actions/add", function(payload, sendBack){
 });
 ```
 
-### Example 2 = BL Layer need to send some data to UI Layer
+### Example 2 = BL Layer need to 'push' some stateChange to UI Layer
 
 ```js
 //On UI Layer
@@ -184,7 +184,7 @@ var id = bridge.on("/models/usersModel", function(payload , sendBack){
 function ChangeEmail(userModel, newEmail){
     userModel.email = userModel;
     bridge.post("/models/usersModel", userModel);
-    //Third Parameter is not needed because many times we do not need to sent anything back.
+    //Third Parameter is not needed because many times other layer don't need sent anything back.
 }
 ```
 
