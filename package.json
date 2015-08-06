@@ -1,0 +1,25 @@
+{
+  "name": "bl-layer-loader",
+  "version": "1.0.0",
+  "description": "BL Layer Loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsisodiya/bl-layer-loader.git"
+  },
+  "keywords": [
+    "BL",
+    "Flux",
+    "JavaScript",
+    "Pattern"
+  ],
+  "author": "Narendra Sisodiya <narendra@narendrasisodiya.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nsisodiya/bl-layer-loader/issues"
+  },
+  "homepage": "https://github.com/nsisodiya/bl-layer-loader#readme"
+}
