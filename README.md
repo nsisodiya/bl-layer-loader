@@ -9,19 +9,26 @@ Origin
 =======
 Large frontend codebase is difficult to manage. We can separate frontend code into UI Layer and BL Layer. 
 
-I have wrote a blog on this topic - https://medium.com/@nsisodiya/flux-inside-web-workers-cc51fb463882, Business Layer (BL) layer can be executed inside Web workers. BL Layer and UI Layer need a medium of communication.
+I have wrote a blog on this topic - https://medium.com/@nsisodiya/flux-inside-web-workers-cc51fb463882, Business Layer (BL) layer can be executed inside Web workers.
 
-BL Layer and UI Layer can communicate with each other using postMessage API. This is ok, but what about the browsers who do have support of Web workers. In this case, BL Layer and UI Layer can communicate using a "shared event bus or message broker".
+Both Layer can communicate with each other using postMessage API. 
 
-Lets have a 3rd case, when BL Layer is executing on server. Then BL Layer and UI Layer can communicate using WebSocket.
+
+What about browser who do not support Web Workers
+=================================================
+Loading BL Layer (Flux) inside Web Workers is good, but what about the browsers who do have support of Web workers. 
+In such cases, BL Layer can be loaded on UI thread itself along with UI Layer.
+Both can communicate using a "shared event bus or message broker".
+Lets have a 3rd case, when BL Layer is executing on server. Then Both Layer can communicate using WebSocket.
 
 So we now have 3 methods of communication. 
 
-"Bridge" is a wrapper over all 3 methods.
+"Bridge API" is a wrapper over all 3 methods.
 
-Basic Idea
-==========
-"Bridge API" is basically a communication wrapper over some isolated code. One JavaScript Code can communicate to another JavaScript Code running in same or different environment.
+Basic Concept
+=============
+"Bridge API" is basically a communication wrapper between two isolated code. 
+One JavaScript Code can communicate to another JavaScript Code running in same or different environment.
 This isolated code can present anywhere. An Application can have multiple Bridge.
 
 Usage
@@ -29,11 +36,12 @@ Usage
 Bridge is created mainly for UI-BL Layer communication, but It can be useful in many places. 
 
 
-Implementation 
+Current Implementation 
 ==============
 * Worker - done
 * Local - done
 * WebSocket - TODO
+
 
 API
 ====
