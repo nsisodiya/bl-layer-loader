@@ -13,11 +13,11 @@ I have wrote a blog on this topic - https://medium.com/@nsisodiya/flux-inside-we
 
 BL Layer and UI Layer can communicate with each other using postMessage API. This is ok, but what about the browsers who do have support of Web workers. In this case, BL Layer and UI Layer can communicate using a "shared event bus or message broker".
 
-Lets have a 3rd case, when BL Layer is executing on server. Then BL Layer and UI Layer can communicate using XMLHTTPRequest or WebSocket.
+Lets have a 3rd case, when BL Layer is executing on server. Then BL Layer and UI Layer can communicate using WebSocket.
 
-So we now have 4 methods of communication. 
+So we now have 3 methods of communication. 
 
-"Bridge" is a wrapper over all 4 methods. In this blog, we will be examining minimum API needed for this communication.
+"Bridge" is a wrapper over all 3 methods.
 
 Basic Idea
 ==========
