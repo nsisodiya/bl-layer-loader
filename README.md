@@ -239,6 +239,11 @@ bridge.on("/actions/*", function(payload, sendBack){
 });
 ```
 
+Demo
+======
+
+Master branch at https://github.com/nsisodiya/flux-inside-web-workers using this package !
+
 Suggestions/Comment
 ======================
 
