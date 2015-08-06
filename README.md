@@ -114,6 +114,9 @@ bridge may or may not hold messages in queue. [To be decided]
 
 ### .on method
 
+```bridge.on(path, callback)``` it accept callback, whenever any message comes, it will be fired.
+"*" means, get all messages !
+
 ```on``` method is used to subscribe events. Please note that this is not equivalent to EventBus. In EventBus, you can publish or subscribe events. but In ```bridge``` we have two ends. Message published at one end will be delivered to other end.
 
 BL Layer may subscribe to some events with some callbacks but your BL layer cannot publish those event, It is UI Layer who will publish those events. 
@@ -129,17 +132,17 @@ var id = bridge.on("*", function(payload, sendBack){
 
 id will be used to unsubscribe.
 
-```bridge.on(path, callback)``` it accept callback, whenever any message comes, it will be fired.
-"*" means, get all messages !
 
 ### .post method
 .post term is derived from .postMessage
 ```js
+bridge.post(path, payload)
+//OR
 bridge.post(path, payload, callback)
 ```
 * path is like /actions/Store/etc, string
 * payload is any object
-* callback - executed when other layer sendBack some data.
+* callback - [Optional] executed when other layer sendBack some data.
 
 ### .off method
 
