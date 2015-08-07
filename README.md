@@ -82,11 +82,6 @@ var bridge = BLLayerLoader.load({
   url: 'ws://apiserver.com/app',
   method: "WebSocket"
 });
-//or
-var bridge = BLLayerLoader.load({
-  url: 'https://apiserver.com/api',
-  method: "XMLHttpRequest"
-});
 ```
 ### .getBLBridge
 UI Layer call ```BLLayerLoader.load``` method to load BLLayer. It return bridge variable which will be used in UI Layer. BL Layer also need ```bridge``` variable. In order to get ```bridge``` variable, you need use ```.getBLBridge``` method.
